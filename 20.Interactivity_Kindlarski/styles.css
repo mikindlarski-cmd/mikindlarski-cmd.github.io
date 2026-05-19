@@ -1,0 +1,28 @@
+/* Full-page background image styling with upper part focus */
+.full-page-image {
+    background-image: url('images/nsx.jpg'); /* Path to the image */
+    background-size: cover; /* Ensure the image covers the entire screen */
+    background-position: top; /* Show more of the upper part of the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: relative;
+}
+
+/* Overlay text box styling */
+.overlay-text {
+    position: absolute;
+    font-size: 40pt;
+    color: #188FFF;
+    background-color: #FF6467;
+    left: 50px;
+    bottom: 50%;
+    font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", "Arial Black", sans-serif;
+    border-radius: 10;
+    border-style: dotted;
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+	display: none;
+}
