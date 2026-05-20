@@ -1,0 +1,47 @@
+/* Basic reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+height: 100%;
+width: 100%;
+overflow: hidden; /* no scrollbars for a clean full-screen look */
+font-family: "Give You Glory", cursive;	
+}
+
+.viewer {
+position: relative; /* important: anchors the absolute-positioned children */
+height: 100vh; /* full viewport height */
+width: 100vw; /* full viewport width */
+}.viewer img {
+}
+body {
+}
+
+
+/* The image: covers the entire viewer */
+.viewer img {
+position: absolute;
+inset: 0; /* shorthand for top/right/bottom/left: 0 */
+width: 100%;
+height: 100%;
+object-fit: cover; /* fill without distortion; may crop */
+}
+
+/* The caption: sits at the bottom, readable over the image */
+.viewer .description {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%); /* shifts back by half its own width */
+    font-size: 2rem;
+    padding: 1rem 1.5rem;
+    color: #0D0000;
+    background-color: rgba(1,0,0,0.50);
+    border-radius: 10rem;
+    background-size: 100% auto;
+    text-shadow: 1px 1px #000000;
+    background-image: url(images/notebook.jpg);
+    -webkit-box-shadow: 0px 0px #000000;
+    box-shadow: 0px 0px #000000;
+}
+
