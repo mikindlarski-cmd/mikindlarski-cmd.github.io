@@ -1,0 +1,107 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+/* Base page settings */
+html, body {
+	height: 100%;
+	background: black;
+	overflow: hidden;
+}
+/* Show the title at the start */
+#titleOverlay {
+	position: fixed;
+	inset: 0;
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	background: rgba(0,0,0,0.7);
+	color: white;
+	cursor: pointer;
+	z-index: 2;
+	
+	background-image: url("images/cover.jpg"); /* Your image file */
+	
+	background-size: cover; /* Makes it fill the screen */
+	background-position: center; /* Keeps centered */
+	background-repeat: no-repeat;	
+}
+/* Initial video state — NOT full screen yet */
+#player {
+	display: block;
+	margin: 40px auto; /* temporary starting position */
+	width: 640px; /* default size before click */
+	height: auto;
+	background: black;
+	z-index: 1;
+}
+/* When activated, video becomes full screen */
+#player.fullscreen {
+	position: fixed;
+	inset: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	margin: 0;
+}
+#titleOverlay.playing {
+	height: auto;
+	width: cover
+
+	position: absolute;
+	bottom: 5%;
+	left: 50%;
+	transform: translateX(-50%);
+
+	padding: 0.8rem 1.5rem;
+
+	/* Cute pink background */
+	background: linear-gradient(
+		135deg,
+		rgba(255, 182, 193, 0.95),
+		rgba(255, 105, 180, 0.92)
+	);
+
+	/* Soft yellow text */
+	color: #fff4a3;
+
+	font-size: 1.2rem;
+	font-weight: bold;
+	font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+
+	text-align: center;
+	cursor: default;
+
+	/* Cute rounded bubble look */
+	border-radius: 1.5rem;
+
+	/* Glow + shadow */
+	box-shadow:
+		0 0 15px rgba(255, 182, 193, 0.7),
+		0 4px 12px rgba(0, 0, 0, 0.25);
+
+	/* Subtle border */
+	border: 2px solid rgba(255, 255, 255, 0.5);
+
+	/* Remove old image */
+	background-image: none;
+
+	/* Optional sparkle-like spacing */
+	letter-spacing: 0.05em;
+}
+#replayBtn {
+	position: fixed;
+	bottom: 10%;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 0.6rem 1.4rem;
+	font-size: 1rem;
+	border-radius: 999px;
+	border: none;
+	background: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	cursor: pointer;
+	display: none; /* hidden until last video finishes */
+	z-index: 5; /* above the video */
+}
